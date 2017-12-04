@@ -1,0 +1,36 @@
+<ion-header>
+  
+    <ion-navbar color ="primary">
+      <ion-title>Park HERE</ion-title>
+      <ion-buttons end>
+          <button ion-button icon-left (click) = 
+          "addPark()">주차장추가 </button>
+        </ion-buttons>
+
+    </ion-navbar>
+  
+    <ion-toolbar>
+      <ion-searchbar [(ngModel)]="searchQuery"
+          (ionInput)="getParks($event)"
+          (ionClear)="resetList($event)">
+      </ion-searchbar>
+    </ion-toolbar>
+  </ion-header>
+  
+  
+  <ion-content>    
+    <ion-list [virtualScroll] = "do" [headerFn]="customHeaderFn">
+        <ion-item-divider *virtualHeader="let header">
+            {{header}}
+          </ion-item-divider>
+
+      <ion-item *virtualItem = "let dos" (click) = "goParkDetails(dos)" detail-push>
+ 
+          <h3>{{dos.place}}</h3>
+          <p>{{dos.si}}, {{dos.do}}</p>
+ 
+        </ion-item>
+    </ion-list>
+  </ion-content>
+  
+

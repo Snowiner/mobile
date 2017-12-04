@@ -1,0 +1,139 @@
+<ion-header>
+    <ion-navbar>
+      <ion-title>
+        신규 주차장 등록
+      </ion-title>
+    </ion-navbar>
+  </ion-header>
+  <ion-content padding id="page1">
+    <form id="page1-form1">
+      <div id="page1-markdown6" class="show-list-numbers-and-dots">
+        <pre>
+          <code>
+            **유의사항**
+          </code>
+        </pre>
+        <p style="color:#000000;">
+          1.주차장 위치명은 &#39;국토정보공사&#39;를 기준으로 기입하시오
+        </p>
+        <p style="color:#000000;">
+          2.필요 Section에만 (최대) 차량 수를 기입 하시오
+        </p>
+        <p style="color:#000000;">
+          ex) A,B,C 섹션만 등록할 경우, D,E섹션은 공백으로 할 것
+        </p>
+      </div>
+  
+      <ion-item>
+        <ion-label>
+          지역선택
+        </ion-label>
+        <ion-select [(ngModel)]="doo" name="doo" type="text">
+          <!-- 값이름 : doo -->
+          <ion-option value="경기도">경기도</ion-option>
+          <ion-option value="강원도">강원도</ion-option>
+          <ion-option value="서울">서울</ion-option>
+          <ion-option value="전라도">전라도</ion-option>
+          <ion-option value="경상도">경상도</ion-option>
+          <ion-option value="충청도">충청도</ion-option>
+          <ion-option value="제주도">제주도</ion-option>
+       </ion-select>
+        <!-- 원래 바로위 select 와 연계되어서 작동해야하나, 아직 해결을 못하였다.
+        ex) 위 select 에서 '경상도'선택시, 아래 select 에서는 '포항시'만 나오게끔 해야함. -->
+        <ion-select [(ngModel)]="si" name="si" type="text">
+          <!--값이름 : si  -->
+          <ion-option value="광주광역시">광주시</ion-option>
+          <ion-option value="대전광역시">대전시</ion-option>
+          <ion-option value="강남구">강남구</ion-option>
+          <ion-option value="춘천시">춘천시</ion-option>
+          <ion-option value="용인시">용인시</ion-option>
+          <ion-option value="포항시">포항시</ion-option>
+        </ion-select>
+  
+      </ion-item>
+      <ion-item id="page1-input3">
+        <ion-label>
+          주차장 위치
+        </ion-label>
+        <ion-input type="text" [(ngModel)]="place" name="place"></ion-input>
+      </ion-item>
+      <ion-item id="page1-input4">
+        <ion-label>
+          주차장 면적
+        </ion-label>
+        <ion-input type="text" [(ngModel)]="wide" name="wide"></ion-input>
+      </ion-item>
+    </form>
+  
+  
+  
+    <div id="page1-markdown1" class="show-list-numbers-and-dots">
+      <p style="color:#000000;">
+        A Section
+      </p>
+    </div>
+    <form id="page1-form10">
+      <ion-item id="page1-input13">
+        <ion-label>
+          차량 수(대)
+        </ion-label>
+        <ion-input type="number" [(ngModel)]="a" name="a"></ion-input>
+      </ion-item>
+    </form>
+    <div id="page1-markdown2" class="show-list-numbers-and-dots">
+      <p style="color:#000000;">
+        B Section
+      </p>
+    </div>
+    <form id="page1-form9">
+      <ion-item id="page1-input14">
+        <ion-label>
+          차량 수(대)
+        </ion-label>
+        <ion-input type="number" [(ngModel)]="b" name="b"></ion-input>
+      </ion-item>
+    </form>
+    <div id="page1-markdown3" class="show-list-numbers-and-dots">
+      <p style="color:#000000;">
+        C Section
+      </p>
+    </div>
+    <form id="page1-form11">
+      <ion-item id="page1-input18">
+        <ion-label>
+          차량 수(대)
+        </ion-label>
+        <ion-input type="number" [(ngModel)]="c" name="c"></ion-input>
+      </ion-item>
+    </form>
+    <div id="page1-markdown4" class="show-list-numbers-and-dots">
+      <p style="color:#000000;">
+        D Section
+      </p>
+    </div>
+    <form id="page1-form13">
+      <ion-item id="page1-input15">
+        <ion-label>
+          차량 수(대)
+        </ion-label>
+        <ion-input type="number" [(ngModel)]="d" name="d"></ion-input>
+      </ion-item>
+    </form>
+    <form id="page1-form14">
+      <div id="page1-markdown5" class="show-list-numbers-and-dots">
+        <p style="color:#000000;">
+          E Section
+        </p>
+      </div>
+      <ion-item id="page1-input16">
+        <ion-label>
+          차량 수(대)
+        </ion-label>
+        <ion-input type="number" [(ngModel)]="e" name="e"></ion-input>
+      </ion-item>
+      <button id="page1-button1" ion-button color="balanced" block (click)="return2enroll(doo,si,place,wide,a,b,c,d,e)">
+        등록
+      </button>
+  
+    </form>
+  </ion-content>
